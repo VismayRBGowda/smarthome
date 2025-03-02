@@ -1,0 +1,38 @@
+const mongoose = require('mongoose');
+
+const historyDataSchema = new mongoose.Schema({
+    time: Number,
+    'use [kW]': Number,
+    'gen [kW]': Number,
+    'House overall [kW]': Number,
+    'Dishwasher [kW]': Number,
+    'Furnace 1 [kW]': Number,
+    'Furnace 2 [kW]': Number,
+    'Home office [kW]': Number,
+    'Fridge [kW]': Number,
+    'Wine cellar [kW]': Number,
+    'Garage door [kW]': Number,
+    'Kitchen 12 [kW]': Number,
+    'Kitchen 14 [kW]': Number,
+    'Kitchen 38 [kW]': Number,
+    'Barn [kW]': Number,
+    'Well [kW]': Number,
+    'Microwave [kW]': Number,
+    'Living room [kW]': Number,
+    'Solar [kW]': Number,
+    temperature: Number,
+    icon: String,
+    humidity: Number,
+    visibility: Number,
+    summary: String,
+    apparentTemperature: Number,
+    pressure: Number,
+    windSpeed: Number,
+    cloudCover: String,
+    windBearing: Number,
+    precipIntensity: Number,
+    dewPoint: Number,
+    precipProbability: Number,
+});
+
+module.exports = mongoose.model('HistoryData', historyDataSchema, 'historydatas');
