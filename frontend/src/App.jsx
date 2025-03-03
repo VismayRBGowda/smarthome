@@ -28,7 +28,7 @@ function App() {
   const [totalConsumptionData, setTotalConsumptionData] = useState([]);
   const [totalEnergy, setTotalEnergy] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
-  const threshold = 10;
+  const threshold = 7;
 
   const weatherImages = {
     sunny: '/assets/sunny.png',
@@ -110,14 +110,14 @@ function App() {
     if (totalEnergy > threshold && !showNotification) {
       setShowNotification(true);
       toast.error(
-        <div>
+        <div className="p-3">
           Total energy consumption exceeded threshold!
         </div>,
         {
           autoClose: false, 
           onClose: () => { // onClose should be a function
-            setShowNotification(false);
-            setTotalEnergy(0);
+            // setShowNotification(false);
+            // setTotalEnergy(0);
           },
         }
       );
@@ -202,7 +202,7 @@ function App() {
             <div className="w-full flex flex-col items-center justify-start overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
               {location.pathname === '/' && isConnected ? (
                 <div className="flex flex-col items-center justify-center m-10">
-                  <div className="title text-amber-500 text-2xl m-3"><span class="material-symbols-outlined mx-3">cooking</span>Total Energy Consumption</div>
+                  <div className="title flex items-center text-amber-500 text-2xl m-3"><span class="material-symbols-outlined mx-3">cooking</span>Total Energy Consumption</div>
                   <div className="graph bg-zinc-700/35 rounded-xl cursor-pointer hover:bg-zinc-700/45 p-2">
                     <div className="energy text-white mx-3">{totalEnergy.toFixed(2)} kW</div>
                     <TotalConsumptionChart data={totalConsumptionData} />
