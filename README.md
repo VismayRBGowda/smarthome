@@ -43,3 +43,6 @@ The project involves the following key components and processes:
 * Notifications and alerts
 * Weather integration
 
+## Project Demo Video
+
+* https://drive.google.com/file/d/1mttCaDa491MbwSAmTygyicMfCjcGIN9d/view?usp=drive_link
